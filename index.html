@@ -1,1 +1,22 @@
+<div id="embedContainer"></div>
 <script>var fm = "AUD";var to = "CNY,JPY,USD";var tz = "timezone";var sz = "1x201";var lg = "en";var st = "primary";var cd = 0;var am = 100</script><script src="//currencyrate.today/exchangerates"></script><div style="text-align:right"><a href="https://currencyrate.today">CurrencyRate</a></div>
+<script>
+    function inIframe () {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    var embedContainer = document.getElementById("embedContainer");
+
+    if (inIframe()) {
+        // It's ok
+    } else {
+        embedContainer.innerHTML = `<div>
+<p style="font-size: 16px;">${'paste the url into your Notion page&#39;s /embed block.'}</p>
+<p><span style="font-weight: bold; font-size: 16px;">${window.location.href}</span></p>
+</div>`
+    }
+</script>
